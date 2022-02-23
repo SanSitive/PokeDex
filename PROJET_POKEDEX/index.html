@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>PokeDex By Maxime Stefani</title>
+    <!-- Import Styles -->
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@3"></script>
+    <link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+
+      <header>
+        <h1 class="title">PokeDex</h1>
+      </header>
+
+      <div class="Pokemon-Form">
+        <form class="search-form" id="form">
+          <h3>Please search below</h3>
+          <label for="field">Name/Id:</label>
+            <input id="field">
+            <label for="type-search">Type of search:</label>
+            <select id="type-search">
+              <option>By Name</option>
+              <option>By Id</option>
+            </select>
+            <input class="button" type="submit" value="Submit" @click="request">
+            <!--<button v-on:click="pokemonDataRequest">Fetch Database</button>-->
+            <button v-on:click="sortByName">Sort By Name</button>
+            <button v-on:click="sortById">Sort By Id</button>
+          </form>
+      </div>
+
+      <!--<search-form @request-sent='request'></search-form>-->
+
+      <div class="Pokemon-Tiles flex-container">
+        <div v-for="detail in details" class="Pokemon-Tiles-Item" v-bind:id="detail.id" @click="displayPopup(detail.id)">
+          <div class="Pokemon-Info">
+            #{{detail.id + ' ' + detail.name}}
+          </div>
+          <img :src=detail.image class="Tiles-Images"> 
+      </div>
+
+      <dialog class="Pokemon-Details" id="popup" class="popup">
+        <div class="popup">
+          <div class="Pokemon-Info">
+            #{{popup.id + ' ' + popup.name}}
+          </div>
+          <img :src=popup.image class="Tiles-Images">
+          <a class="close" href="#" @click="hidePopup">&times;</a>
+          <ul>
+            <li v-for="ele in popup.stats">{{ele.stat.name + ':' + ele.base_stat}}</li> 
+          </ul>
+          </div>
+        </div>
+      </dialog>
+
+    </div>
+
+    <!-- Import App -->
+    <script src="./main.js"></script>
+
+    <!-- Import Component-->
+    <script src="./components/SearchForm.js"></script>
+
+    <!-- Mount App -->
+    <script>
+      const mountedApp = app.mount('#app');
+    </script>
+  </body>
+</html>

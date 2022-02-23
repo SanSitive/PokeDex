@@ -1,0 +1,101 @@
+@font-face {
+    font-family: PokemonFont;
+    src: url('http://fonts.cdnfonts.com/css/pokemon-solid');
+  }
+
+body{
+    background-image: url('./images/background-pokeball.jpg');
+}
+.Tiles-Images{
+    position:relative;
+    bottom:0px;
+}
+.flex-container {
+    display: grid;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-template-columns: auto auto auto auto;
+    background-color: rgba(122, 116, 116);
+    border: 4px solid red;
+    margin-left:20%;
+    margin-right:20%;
+    
+}
+.flex-container > div{
+    background-color: #f1f1f1;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 10px;
+}
+body{
+    background-color:grey;
+}
+h1{
+    font-family:'Pokemon Solid';
+    color:#ffcc03;
+    text-shadow:4px 4px 4px blue;
+    text-align:center;
+    font-size: 45px;
+    background-color: rgba(122, 116, 116);
+    border: 4px solid red;
+    width:30%;
+    margin:auto;
+}
+
+.Pokemon-Tiles-Item{
+    text-align:center;
+}
+.Pokemon-Tiles-Item:hover{
+    background-color: beige;
+}
+  
+.popup {
+    margin: 0px auto;
+    padding: 40px;
+    background: #fff;
+    border-radius: 0px;
+    width:60%;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+
+dialog{
+    margin:0px;
+    left:0px;
+    top:0px;
+    position:absolute;
+}
+
+.popup .close {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+.popup .close:hover {
+    color: #06D85F;
+}
+
+  
+ul{
+    list-style-image: url('./images/Poké_Ball_icon.png');
+    list-style-position: inside;
+    padding-left:0px;
+    width:100%;
+}
+.Pokemon-Form{
+    text-align: center;
+    background-color: rgba(122, 116, 116);
+    border: 4px solid red;
+    border-bottom: 1px solid rgba(122, 116, 116);
+    width:50%;
+    margin:auto;
+}
