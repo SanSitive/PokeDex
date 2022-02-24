@@ -16,6 +16,7 @@
         <h1 class="title">PokeDex</h1>
       </header>
 
+      <!-- HTML du form-->
       <div class="Pokemon-Form">
         <form class="search-form" id="form">
           <h3>Please search below</h3>
@@ -27,14 +28,12 @@
               <option>By Id</option>
             </select>
             <input class="button" type="submit" value="Submit" @click="request">
-            <!--<button v-on:click="pokemonDataRequest">Fetch Database</button>-->
             <button v-on:click="sortByName">Sort By Name</button>
             <button v-on:click="sortById">Sort By Id</button>
           </form>
       </div>
 
-      <!--<search-form @request-sent='request'></search-form>-->
-
+      <!-- HTML des tiles-->
       <div class="Pokemon-Tiles flex-container">
         <div v-for="detail in details" class="Pokemon-Tiles-Item" v-bind:id="detail.id" @click="displayPopup(detail.id)">
           <div class="Pokemon-Info">
@@ -42,7 +41,8 @@
           </div>
           <img :src=detail.image class="Tiles-Images"> 
       </div>
-
+      
+      <!-- HTML popup détaillée du pokémon-->
       <dialog class="Pokemon-Details" id="popup" class="popup">
         <div class="popup">
           <div class="Pokemon-Info">
@@ -61,9 +61,6 @@
 
     <!-- Import App -->
     <script src="./main.js"></script>
-
-    <!-- Import Component-->
-    <script src="./components/SearchForm.js"></script>
 
     <!-- Mount App -->
     <script>
